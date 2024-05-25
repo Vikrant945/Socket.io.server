@@ -26,7 +26,7 @@ const users={};
 io.on('connection', socket =>{
     socket.on('newuser', username =>{
         users[socket.id] = username;
-        console.log("New user", username);
+       
         socket.broadcast.emit('update-joined',username+"  joined the conversation");
     })
 
@@ -34,24 +34,24 @@ io.on('connection', socket =>{
  
 
   socket.on("send", message =>{
-    console.log(message);
+  
     socket.broadcast.emit('recieve', {message:message ,user:users[socket.id]});
 } )
 
 
 
 socket.on("mydraw", position =>{
-  console.log(position);
+  
   socket.broadcast.emit('other-draw', {x:position.x , y:position.y ,lWidth:position.lWidth ,penColor:position.penColor});
 } )
 
 socket.on("down", position =>{
-  console.log(position);
+  
   socket.broadcast.emit('ondown', {x:position.x , y:position.y});
 } )
 
 socket.on("my-start-path", message =>{
-  console.log(message);
+  
   socket.broadcast.emit('other-start-path', "ok start");
 } )
 
