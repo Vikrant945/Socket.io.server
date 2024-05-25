@@ -17,7 +17,7 @@ app.get("/",(req,res)=>{
 const io = require("socket.io")(expressServer, {
       cors: {
 
-        origin: "*",
+        origin: "file:///C:/Users/DELL/Desktop/CLT/Frontend/index.html",
         methods: ["GET", "POST"]
       }
     });
