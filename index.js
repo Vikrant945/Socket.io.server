@@ -27,9 +27,9 @@ const io = require("socket.io")(expressServer, {
 
 
 const users={};
-let websocket = async()=>{
 
-await io.on('connection', socket =>{
+
+ io.on('connection', socket =>{
     socket.on('newuser', username =>{
         users[socket.id] = username;
        
@@ -76,8 +76,6 @@ socket.on("disconnect", message =>{
 } )
 })
 
-};
 
-websocket()
 
 
