@@ -17,8 +17,8 @@ app.get("/",(req,res)=>{
 
 const io = require("socket.io")(expressServer, {
       cors: {
-
-        origin: "https://vikrant945.github.io",
+        // https://vikrant945.github.io
+        origin: "*",
         methods: ["GET", "POST"]
 
       }
