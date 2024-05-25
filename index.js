@@ -18,22 +18,12 @@ app.get("/",(req,res)=>{
 const io = require("socket.io")(expressServer, {
       cors: {
 
-        origin: "*",
-        methods: ["GET", "POST"],
-        allowedHeaders: 'Content-Type',
-        credentials: true
+        origin: "https://vikrant945.github.io",
+        methods: ["GET", "POST"]
 
       }
     });
 
-
-
-    app.use(cors({
-      origin: 'https://vikrant945.github.io',
-      methods: 'GET,POST',
-      allowedHeaders: 'Content-Type',
-      credentials: true
-    }));
 
 
 const users={};
