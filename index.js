@@ -16,6 +16,8 @@ app.get("/",(req,res)=>{
 
 const io = require("socket.io")(expressServer, {
       cors: {
+
+        origin: "*",
         methods: ["GET", "POST"]
       }
     });
