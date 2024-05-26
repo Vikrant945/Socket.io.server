@@ -48,7 +48,7 @@ const users={};
 
 socket.on("mydraw", position =>{
   
-  socket.broadcast.emit('other-draw', {x:position.x , y:position.y ,lWidth:position.lWidth ,penColor:position.penColor});
+  socket.broadcast.emit('other-draw', {x:position.x , y:position.y ,lWidth:position.lWidth ,penColor:position.penColor,user:users[socket.id]});
 } )
 
 socket.on("down", position =>{
