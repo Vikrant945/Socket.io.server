@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const path = require("path");
 const cors = require('cors');
+const {job} = require('./cron');
+job.start();
+
 
 const expressServer = app.listen(8000);
 
