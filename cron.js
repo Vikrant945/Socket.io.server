@@ -7,13 +7,14 @@ const backendUrl = 'https://socket-io-server-vmy8.onrender.com/socket.io/socket.
 
 const job = new cron.CronJob('*/1 * * * *', function () {
   // This function will be executed every 5 minutes.
-  console.log(`Hitting backend endpoint to keep server alive...`);
+  // console.log(`Hitting backend endpoint to keep server alive...`);
 
   // Perform an HTTPS GET request to hit any backend API.
   https
     .get(backendUrl, (res) => {
       if (res.statusCode === 200) {
-        console.log('Successfully hit backend endpoint. Server is active.');
+        console.log('success');
+        // console.log('Successfully hit backend endpoint. Server is active.');
       } else {
         console.error(`Failed to hit endpoint. Status code: ${res.statusCode}`);
       }
